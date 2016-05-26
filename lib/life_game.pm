@@ -3,14 +3,22 @@
 use v6;
 
 class life_game {
-   has Int $.rows;
-   has Int $.cols;
+   has Int $.rows is required;
+   has Int $.cols is required;
    
-   #has Any @.board = Array.new(:shape($!rows,$!cols));
    has Array @.board = [ (1..$!rows).map({ [ (1..$!cols).map({ [ False, True ].pick }) ] }) ];
 
-   sub resolve_board (Str $board) is export {
-       return $board
+   method live_neighbours (int $row, int $col) {
+     my int $live = 0;
+     $live += @.board[$row; ($col - 1) % self.cols ] ?? 1 !! 0;
+     $live += @.board[$row; ($col + 1) % self.cols ] ?? 1 !! 0;
+     $live += @.board[ ($row + 1) % self.rows; $col] ?? 1 !! 0;
+     $live += @.board[ ($row - 1) % self.rows; $col] ?? 1 !! 0;
+     return $live;
+   }
+
+   method iterate {
+      
    }
 }
 
