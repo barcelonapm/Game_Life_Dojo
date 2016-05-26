@@ -7,7 +7,7 @@ class life_game {
    has Int $.cols;
    
    #has Any @.board = Array.new(:shape($!rows,$!cols));
-   has Array @.board = [ (1..$!rows).map({ [ (1..$!cols).map({ False }) ] }) ];
+   has Array @.board = [ (1..$!rows).map({ [ (1..$!cols).map({ [ False, True ].pick }) ] }) ];
 
    sub resolve_board (Str $board) is export {
        return $board

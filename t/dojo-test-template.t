@@ -10,7 +10,7 @@ my ($rows,$cols) = (5,5);
 
 my $game = life_game.new(:$rows,:$cols);
 
-is($game.board[1;1], False, 'Estamos bien inicializados?');
+is($game.board[1;1], False|True, 'Estamos bien inicializados?');
 say $game.perl; 
 is('5,4,....................',resolve_board('5,4,....................'),
    "An empty board returns an empty board");
@@ -19,7 +19,7 @@ is('5,4,....................',resolve_board('5,4,....................'),
 
 $game = life_game.new(:$rows,:$cols);
 
-is($game.board[6;6], False, 'Estamos bien inicializados?');
+is($game.board[6;6], False|True, 'Estamos bien inicializados?');
 say $game.perl; 
 
 done-testing;
