@@ -1,4 +1,6 @@
 # Game_Life_Dojo
+
+### [![Build Status](https://travis-ci.org/barcelonapm/Game_Life_Dojo.png)](https://travis-ci.org/barcelonapm/Game_Life_Dojo)
 Randory dojo on [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
 
 https://en.wikipedia.org/wiki/Conway's_Game_of_Life
