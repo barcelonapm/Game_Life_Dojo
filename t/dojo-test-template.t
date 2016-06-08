@@ -15,13 +15,17 @@ is(resolve_board('5.0,4,....................'),'',
    "Rows Value must be integer");
 is(resolve_board('5,4.0,....................'),'',
    "Cols Value must be integer");
-is(resolve_board('Rows=5,\n'~
-        	 'Cols=4,\n'~
-                 ' ....\n'~
-                 ' ....\n'~
-                 ' ....\n'~
-                 ' ....\n'~
-                 ' ....\n'),
+is(resolve_board("Rows=5,\n"~
+        	 "Cols=4,\n"~
+                 " ....\n"~
+                 " ....\n"~
+                 " ....\n"~
+                 " ....\n"~
+                 " ....\n"),
     '5,4,....................','Invalid chars are ignored');
+is(print_board('1,1,.'),"(1,1),\n     .",'Prints ok');
+                              
+is(print_board('2,3,......'),"(2,3),\n     ...\n     ...",'Prints ok');
+
          
 done-testing;
