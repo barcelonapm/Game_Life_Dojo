@@ -26,6 +26,7 @@ is(resolve_board("Rows=5,\n"~
 is(print_board('1,1,.'),"(1,1),\n     .",'Prints ok');
                               
 is(print_board('2,3,......'),"(2,3),\n     ...\n     ...",'Prints ok');
-
-         
+is('4,4,**.*............',resolve_board(resolve_board('4,4,**.*............')),
+   'blinker blinks'); 
+   
 done-testing;
