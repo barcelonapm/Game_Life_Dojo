@@ -11,4 +11,6 @@ is(resolve_board('5,4,....................'),'5,4,....................',
    "An empty board returns an empty board");
 is(resolve_board('5,4,.r..................'),'',
    "An invalid board returns an empty string");
+is(resolve_board('5.0,4,....................'),'',
+   "Rows Value must be integer");
 done-testing;
