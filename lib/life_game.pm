@@ -7,6 +7,7 @@ module life_game {
        my $result = $board;
        $result  ~~ s:g/<-[\d\.\,\*]>//;
        my @estate = split(',',$result); 
+       return '' if @estate[0] ~~ /\D/;
        return '' if chars(@estate[2]) < @estate[0] * @estate[1];
        return $board;
    }
