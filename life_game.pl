@@ -5,7 +5,15 @@ sub MAIN {
     use lib 'lib';
     use life_game;
     for lines() {
-        resolve_board($_).say ;
+        print_board($_).say;
+        my $next = resolve_board($_);
+        print_board($next).say ;
+        $next = resolve_board($next);
+        print_board($next).say ;
+        $next = resolve_board($next);
+        print_board($next).say ;
+        $next = resolve_board($next);
+        print_board($next).say ;
     }
 }
      
